@@ -1,41 +1,21 @@
 import './App.css';
-import React, { useState } from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  NavbarText
-} from 'reactstrap';
-
-
-function App() {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
-  return (
-    <div>
-    <Navbar color="light" light expand="md">
-      <NavbarBrand href="/">BNIN</NavbarBrand>
-      <NavbarToggler onClick={toggle} />
-      <Collapse isOpen={isOpen} navbar>
-        <Nav className="mr-auto" navbar>
-          <NavItem>
-            <NavLink href="#">Home</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="#">About</NavLink>
-          </NavItem>
-        </Nav>
-        <NavbarText>
-          Book a Table
-        </NavbarText>
-      </Collapse>
-    </Navbar>
-  </div>
-  );
+import React, { Component } from 'react';
+import { Navbar, NavbarBrand } from 'reactstrap';
+class App extends Component {
+  render() {
+    return (
+      <>
+        <div className="bg-dark d-flex flex-column flex-md-row justify-content-center
+         align-items-center text-center black-lives-matter">
+         <span className="text-light mr-3 h4">Black Lives Matter.</span>
+         <div className='text-white'>We Support the Equal Justice Initiative.</div></div>
+        <Navbar dark color="primary">
+          <div className="container">
+            <NavbarBrand href="/">BNIN</NavbarBrand>
+          </div>
+        </Navbar>
+      </>
+    );
+  }
 }
-
 export default App;
