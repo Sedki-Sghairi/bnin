@@ -1,7 +1,15 @@
 import './App.css';
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
+import { Menu } from './menu'
+import DisplayMenu from './components/DisplayMenu';
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      menu : Menu
+    }
+  }
   render() {
     return (
       <>
@@ -14,6 +22,7 @@ class App extends Component {
             <NavbarBrand href="/">BNIN</NavbarBrand>
           </div>
         </Navbar>
+        <DisplayMenu menu = {this.state.menu} />
       </>
     );
   }
