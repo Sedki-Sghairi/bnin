@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 .black-lives-matter {
 	width: 100%;
 	min-height: 4em;
 }
 .body {
 	padding-top: 4em;
+}
+.header-container {
+	background-color: #466995;
+}
+.delicious {
+	font-family: 'Dancing Script', cursive;
+}
+.logo {
+	max-width: 100px;
 }
