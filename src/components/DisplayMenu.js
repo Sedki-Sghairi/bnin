@@ -19,7 +19,7 @@ export default class DisplayMenu extends Component {
     render() {
         const allMenu = this.props.menu.map((dish) =>{
             return (
-                <div key={dish.id} className="col-12 col-md-5 m-1">
+                <div key={dish.id} className="col-12 col-md-4">
                 <Card 
                   onClick={() => this.showDish(dish)}>
                   <CardImg width="100%" src={dish.img} alt={dish.title} />

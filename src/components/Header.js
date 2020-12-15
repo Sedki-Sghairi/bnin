@@ -18,12 +18,12 @@ class Header extends Component {
         </div>
         <Jumbotron>
            <div className="container">
-               <div className="row row-header">
-                   <div className="col-12 col-sm-9">
+               <div className="row">
+                   <div className="col-12 col-sm-10">
                        <h1 className='delicious'>Delicious</h1>
                        <p>Our values include providing fair wages for workers, giving back to the communities we work with, and serving<span className="text-success mr-3 h4"> fresh</span> and<span className="text-primary mr-3 h4"> delicious</span>food.</p>
                    </div>
-                   <div className="col-12 col-sm-3">
+                   <div className="col-12 col-sm-2">
                        <div className="logo">
                            <img src="images/logo.png" alt="logo" className='img-fluid'/>
                        </div>
