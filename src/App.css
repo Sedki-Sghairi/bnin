@@ -6,6 +6,7 @@
 #root {
 	background: linear-gradient(to bottom, #fff, #4e8ab3);
 	min-height: 100vh;
+	overflow-x: hidden;
 }
 .header-container {
 	background-color: #466995;
@@ -34,8 +35,19 @@
 	font-size: 3rem;
 }
 .price {
-	color: #5d2a42;
+	color: #361425;
 }
 .desc {
 	font-size: 1.3rem;
+}
+.details {
+	margin: .25rem auto;
+}
+.neg-mar {
+	margin-bottom: -6rem;
+	z-index: 1;
+}
+.card-title {
+	text-transform: capitalize;
+	font-size: 1.1rem;
 }

@@ -1,5 +1,7 @@
-import React from 'react'
-import { UncontrolledCarousel } from 'reactstrap';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
+import { Card, CardBody, CardImg, CardText, CardTitle, UncontrolledCarousel } from 'reactstrap';
+import { Menu } from '../menu'
 
 const items = [
     {
@@ -24,12 +26,46 @@ const items = [
     }
   ];
   
-
-export default function Home() {
-    return (
-        <div className="container-fluid">
-            <UncontrolledCarousel items={items} />
+export default class Home extends Component{
+ 
+    constructor() {
+      super()
+      this.state = {
+        menu: Menu
+      }
+    }
+    render(){
+    const ShowFeatured = (props) => {
+      return (
+        <div className="container">
+          <div className="row">
+          {props.dish.map((dish) => {
+            return (
+              <div className="col-12 col-md-4 mt-1 neg-mar" key={dish.id}>
+              <Link to={`/menu/${dish.id}`}>
+                <Card>
+                  <CardImg top src={dish.img} alt={dish.title} />
+                  <CardBody>
+                    <CardTitle className='text-center card-title'>{dish.title}</CardTitle>
+                  </CardBody>
+                </Card>
+              </Link>
+              </div>
+            );
+          })}
+          </div>
         </div>
-    )
-}
+      );
+    };
+    return (
+      <div className="container-fluid">
+        <div className="d-none d-md-block">
+        <ShowFeatured dish={this.state.menu.filter((meal) => meal.featured === true)} />
+        </div>
+        <UncontrolledCarousel items={items} />
+      </div>
+    );
+  }
+  }
+
 

@@ -16,14 +16,14 @@ export default class DisplayMenu extends Component {
         const allMenu = this.props.menu.map((dish) =>{
             return (
                 <div key={dish.id} className="col-12 col-md-4">
-                  <Link to={`/menu/${dish.id}`}>
-                  <Card>
+                <Link to={`/menu/${dish.id}`}>
+                    <Card>
                         <CardImg width="100%" src={dish.img} alt={dish.title} />
-                  <CardImgOverlay>
+                    <CardImgOverlay>
                         <CardTitle className="text-white">{dish.title}</CardTitle>
-                  </CardImgOverlay>
+                    </CardImgOverlay>
                 </Card>
-                  </Link>
+                </Link>
                 </div>
             )
         })

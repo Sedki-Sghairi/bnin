@@ -36,7 +36,7 @@ export default class Header extends Component {
                          aria-label="Toggle navigation">
                         <FaHamburger/>
                         </button>
-                        <NavbarBrand href="/"><i className="fa fa-delicious mr-auto"> DeLiCiOuS</i> </NavbarBrand>                        <Collapse isOpen={this.state.isNavOpen} navbar>
+                        <NavbarBrand href="/home"><i className="fa fa-delicious mr-auto"> DeLiCiOuS</i> </NavbarBrand>                        <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
                             <NavItem>
                                 <NavLink className="nav-link"  to='/home'><GoHome/> Home</NavLink>
@@ -60,7 +60,7 @@ export default class Header extends Component {
                         </div>
                         <div className="col-12 col-sm-2">
                             <div className="logo">
-                                <img src="images/logo.png" alt="logo" className='img-fluid'/>
+                                <img src="/images/logo.png" alt="logo" className='img-fluid'/>
                             </div>
                         </div>
                     </div>
