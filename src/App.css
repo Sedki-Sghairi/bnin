@@ -3,8 +3,9 @@
 	width: 100%;
 	min-height: 4em;
 }
-.body {
-	padding-top: 4em;
+#root {
+	background: linear-gradient(to bottom, #fff, #4e8ab3);
+	min-height: 100vh;
 }
 .header-container {
 	background-color: #466995;
@@ -25,4 +26,16 @@
 .neg-mar {
 	height: 100%;
 	margin-top: -4rem;
+}
+
+.title {
+	color: #073300;
+	font-family: 'Dancing Script', sans-serif;
+	font-size: 3rem;
+}
+.price {
+	color: #5d2a42;
+}
+.desc {
+	font-size: 1.3rem;
 }
