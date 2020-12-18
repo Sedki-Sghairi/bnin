@@ -6,6 +6,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './Home';
 import Error from './Error';
 import { Card, CardBody, CardImg, CardImgOverlay, CardText, CardTitle } from 'reactstrap';
+import Footer from './Footer';
 
 
 class Main extends Component {
@@ -55,6 +56,7 @@ class Main extends Component {
         {/* <Route path='/error' component={() => <Error/>}/> */}
         {/* <Redirect to='/error'/> */}
       </Switch>
+      <Footer/>
       </>
     );
   }
