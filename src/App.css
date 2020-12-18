@@ -61,3 +61,24 @@
 	color: #ffb79a;
 	font-family: "Sniglet", cursive;
 }
+.fa-phone,
+.fa-envelope {
+	color: #f4d06f;
+}
+/* book a table */
+#book {
+	color: #222;
+	font-size: 1.2rem;
+	margin: 0 auto;
+}
+#book form {
+	margin: 1rem auto;
+	min-width: 60%;
+}
+#book form input,
+#book form select,
+#book form textarea {
+	margin-top: .25rem;
+	border: #385f6e solid 1px;
+	border-radius: .5rem;
+}
