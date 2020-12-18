@@ -7,6 +7,7 @@ import Home from './Home';
 import Error from './Error';
 import { Card, CardBody, CardImg, CardImgOverlay, CardText, CardTitle } from 'reactstrap';
 import Footer from './Footer';
+import Book from './Book';
 
 
 class Main extends Component {
@@ -49,6 +50,7 @@ class Main extends Component {
       <>
       <Header/>
       <Switch>
+        <Route exact path='/book' component={ Book }/>
         <Route path='/home' component={Home}/>
         <Route exact path='/menu' component={() =>
         <DisplayMenu menu = {this.state.menu} />}/>

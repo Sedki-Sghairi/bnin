@@ -51,3 +51,13 @@
 	text-transform: capitalize;
 	font-size: 1.1rem;
 }
+/* footer */
+.footer {
+	background-color: #3c4f76;
+	color: floralwhite;
+	width: 100vw;
+}
+.follow-us {
+	color: #ffb79a;
+	font-family: "Sniglet", cursive;
+}

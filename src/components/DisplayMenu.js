@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody,
-    CardTitle } from 'reactstrap';
+    CardTitle, 
+    Breadcrumb,
+    BreadcrumbItem} from 'reactstrap';
 
 
 export default class DisplayMenu extends Component {
@@ -29,9 +31,16 @@ export default class DisplayMenu extends Component {
         })
         return (
           <div className="container">
-              <div className="row">
+                <div className="row">
+                <Breadcrumb>
+                    <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
+                    <BreadcrumbItem active> Menu</BreadcrumbItem>
+                </Breadcrumb>
+                </div>
+                <h1 className="text-primary text-center mb-3"> Our Menu Selection</h1>
+                <div className="row">
                   {allMenu}
-              </div>
+                </div>
           </div>
         )
     }
