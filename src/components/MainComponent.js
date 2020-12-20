@@ -51,7 +51,7 @@ class Main extends Component {
       <Header/>
       <Switch>
         <Route exact path='/book' component={ Book }/>
-        <Route path='/home' component={Home}/>
+        <Route exact path='/' component={Home}/>
         <Route exact path='/menu' component={() =>
         <DisplayMenu menu = {this.state.menu} />}/>
         <Route path='/menu/:id' component={MealDetail}/>

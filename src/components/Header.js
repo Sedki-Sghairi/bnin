@@ -1,6 +1,6 @@
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron, Form } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-import react, { Component } from 'react'
+import React, { Component } from 'react'
 import { FaHamburger } from 'react-icons/fa'
 import { IoIosRestaurant } from 'react-icons/io'
 import { BiFoodMenu } from "react-icons/bi";
@@ -36,10 +36,10 @@ export default class Header extends Component {
                          aria-label="Toggle navigation">
                         <FaHamburger/>
                         </button>
-                        <NavbarBrand href="/home"><i className="fa fa-delicious mr-auto"> DeLiCiOuS</i> </NavbarBrand>                        <Collapse isOpen={this.state.isNavOpen} navbar>
+                        <NavbarBrand href="/"><i className="fa fa-delicious mr-auto"> DeLiCiOuS</i> </NavbarBrand>                        <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
                             <NavItem>
-                                <NavLink className="nav-link"  to='/home'><GoHome/> Home</NavLink>
+                                <NavLink className="nav-link"  to='/'><GoHome/> Home</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink className="nav-link"  to='/menu'><BiFoodMenu/> Menu</NavLink>

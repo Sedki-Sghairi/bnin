@@ -33,7 +33,7 @@ export default class DisplayMenu extends Component {
           <div className="container">
                 <div className="row">
                 <Breadcrumb>
-                    <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
+                    <BreadcrumbItem><Link to="/">Home</Link></BreadcrumbItem>
                     <BreadcrumbItem active> Menu</BreadcrumbItem>
                 </Breadcrumb>
                 </div>
