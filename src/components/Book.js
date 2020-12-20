@@ -1,3 +1,4 @@
+import { error, timers } from 'jquery'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap'
@@ -9,33 +10,56 @@ export default class Book extends Component {
             firstname:'',
             lastname:'',
             telnum :'',
-            email:'',
+            emailid:'',
             table:1,
             date:'',
             time:'',
-            feedback:''
+            feedback:'',
+            focused: {
+                firstname:false,
+                lastname:false
+            },
+            error:''
 
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleBlur = this.handleBlur.bind(this)
     }
     handleSubmit(e){
         e.preventDefault()
-        alert(JSON.stringify(this.state))
+        console.log(JSON.stringify(this.state))
     }
     handleChange(e){
         const target = e.target
-        const value = ( target.type === 'checked'? target.checked : (
-            target.type === 'date'?target.date:(
-                target.type === 'time'?target.time:target.value
-                )
-        ))
+        const value =  target.type === 'checked'? target.checked : target.value
         const name = target.name
         this.setState({
             [name]:value
         })
     }
+    handleBlur = (field) => () => {
+        this.setState({
+            focused: {...this.state.focused, [field]:true}
+        })
+    }
+    validate(firstame , lastname){
+        const errors = {
+            firstname:'',
+            lastname:''
+        }
+        if(this.state.focused.firstname && this.state.firstname===''){
+            errors.firstname = 'please enter you name'
+          
+        } 
+        if(this.state.focused.lastname && this.state.lastname===''){
+            errors.lastname = 'please enter you last name'
+          
+        } 
+        return errors
+    }
     render(){
+        const errors = this.validate(this.state.firstame, this.state.lastname)
 
     return (
         <div className='container'>
@@ -53,16 +77,23 @@ export default class Book extends Component {
                     <div className="col-md-10">
                         <input type="text" id="name" name="firstname"
                          placeholder="First Name" className="form-control"
-                             onChange={this.handleChange}
+                            onChange={this.handleChange}
+                            onBlur={this.handleBlur('firstname')}
                          />
                     </div>
+                    <p className="col-12 text-danger text-center">{errors.firstname}</p>
+                    <p className="col-12 text-danger text-center">{this.state.error.firstame}</p>
                     </div>
+                            
                     <div className="form-row">
                         <label htmlFor="lastname" className="col-md-2 col-form-label">Last Name</label>
                         <div className="col-md-10">
                         <input type="text" id="lastname" name="lastname" placeholder="last Name"
-                         className="form-control" onChange={this.handleChange}/>
+                         className="form-control" onChange={this.handleChange}
+                             onBlur={this.handleBlur('lastname')}
+                         />
                         </div>
+                        <p className="col-12 text-danger text-center">{errors.lastname}</p>
                     </div>
                     <div className="form-row">
                         <label htmlFor="table" className="offset-sm-2 col-md-5 col-form-label">Table For:</label>
