@@ -1,4 +1,4 @@
-import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron, Form } from 'reactstrap';
+import { Nav, Navbar, NavbarBrand, Collapse, NavItem, Jumbotron} from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import React, { Component } from 'react'
 import { FaHamburger } from 'react-icons/fa'
@@ -54,13 +54,13 @@ export default class Header extends Component {
                 <Jumbotron>
                 <div className="container">
                     <div className="row">
-                        <div className="col-12 col-sm-10">
+                        <div className="col-12 col-sm-8">
                             <h1 className='delicious'>Delicious</h1>
                             <p>Our values include providing fair wages for workers, giving back to the communities we work with, and serving<span className="text-success mr-3 h4"> fresh</span> and<span className="text-primary mr-3 h4"> delicious</span>food.</p>
                         </div>
-                        <div className="col-12 col-sm-2">
+                        <div className="col-12 col-sm-4">
                             <div className="logo">
-                                <img src="/images/logo.png" alt="logo" className='img-fluid'/>
+                                <img src="/images/logo.svg" alt="logo" className='img-fluid'/>
                             </div>
                         </div>
                     </div>

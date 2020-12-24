@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody,
+import { Card, CardImg, CardImgOverlay,
     CardTitle, 
     Breadcrumb,
     BreadcrumbItem} from 'reactstrap';
+import Breakfast from './Breakfast';
+import Lunch from './Lunch';
+import Dinner from './Dinner';
+import Shakes from './Shakes';
+
 
 
 export default class DisplayMenu extends Component {
@@ -22,7 +27,7 @@ export default class DisplayMenu extends Component {
                     <Card>
                         <CardImg width="100%" src={dish.img} alt={dish.title} />
                     <CardImgOverlay>
-                        <CardTitle className="text-white">{dish.title}</CardTitle>
+                        <CardTitle className="text-white bg-secondary text-center p-1 rounded">{dish.title}</CardTitle>
                     </CardImgOverlay>
                 </Card>
                 </Link>
@@ -39,9 +44,30 @@ export default class DisplayMenu extends Component {
                 </div>
                 <h1 className="text-primary text-center mb-3"> Our Menu Selection</h1>
                 <div className="row">
-                  {allMenu}
+                    <h2 className="col-12 text-center">Breakfast</h2>
                 </div>
-          </div>
+                <div className="row m-3">
+                 <Breakfast menu={this.props.menu}/>
+                </div>
+                <div className="row">
+                    <h2 className="col-12 text-center">Lunch</h2>
+                </div>
+                <div className="row m-3">
+                 <Lunch menu={this.props.menu}/>
+                </div>
+                <div className="row">
+                    <h2 className="col-12 text-center">Dinner</h2>
+                </div>
+                <div className="row m-3">
+                 <Dinner menu={this.props.menu}/>
+                </div>
+                <div className="row">
+                    <h2 className="col-12 text-center">Our Shakes</h2>
+                </div>
+                <div className="row m-3">
+                 <Shakes menu={this.props.menu}/>
+                </div>
+            </div>
         )
     }
 }

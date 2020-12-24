@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import { Card, CardBody, CardImg, CardText, CardTitle, UncontrolledCarousel } from 'reactstrap';
+import { Card, CardBody, CardImg, CardTitle, UncontrolledCarousel } from 'reactstrap';
 import { Menu } from '../menu'
-
+import { FaCocktail, FaWineGlassAlt, FaMugHot, FaBeer } from 'react-icons/fa';
+import { FadeTransform } from 'react-animation-components';
 const items = [
     {
       src: 'images/1.jpg',
@@ -26,6 +27,60 @@ const items = [
     }
   ];
   
+const Title = ({ title }) => {
+    return (
+      <div className="section-title">
+        <h4>{title}</h4>
+        <div />
+      </div>
+    );
+}
+
+class Services extends Component {
+	state = {
+		drinks: [
+			{
+				icon: <FaCocktail />,
+				title: 'our cocktails',
+				info: 'lorem ipsum lecun sit alik constalis fab abeleik keif lacking asfwoj magine coutch'
+			},
+			{
+				icon: <FaWineGlassAlt/>,
+				title: 'Our Wine',
+				info: 'lorem ipsum folar lecun sit alik constalis fab abeleik keif sido diug haick the mountain'
+			},
+			{
+				icon: <FaMugHot />,
+				title: 'Traditional Coffee',
+				info: 'lorem ipsum folar lecun sit alik constalis fab abeleik keif lack aswak tunis'
+			},
+			{
+				icon: <FaBeer />,
+				title: 'Local beer',
+				info: 'lorem ipsum folar lecun sit alik constalis fab abeleik keif lacking bainama dima labes'
+			}
+		]
+	};
+	render() {
+		return (
+			<section className="services">
+				<Title title="Our Drinks" />
+				<div className="services-center">
+					{this.state.drinks.map((item, index) => {
+						return (
+							<article key={index} className="service">
+								<span>{item.icon}</span>
+								<h6>{item.title}</h6>
+								<p>{item.info}</p>
+							</article>
+						);
+					})}
+				</div>
+			</section>
+		);
+	}
+}
+
 export default class Home extends Component{
  
     constructor() {
@@ -42,6 +97,11 @@ export default class Home extends Component{
           {props.dish.map((dish) => {
             return (
               <div className="col-12 col-md-4 mt-1 neg-mar" key={dish.id}>
+              <FadeTransform
+                in
+                transformProps={{
+                    exitTransform: 'scale(0.5) translateY(-50%)'
+                }}>
               <Link to={`/menu/${dish.id}`}>
                 <Card>
                   <CardImg top src={dish.img} alt={dish.title} />
@@ -50,6 +110,7 @@ export default class Home extends Component{
                   </CardBody>
                 </Card>
               </Link>
+              </FadeTransform>
               </div>
             );
           })}
@@ -63,6 +124,7 @@ export default class Home extends Component{
         <ShowFeatured dish={this.state.menu.filter((meal) => meal.featured === true)} />
         </div>
         <UncontrolledCarousel items={items} />
+        <Services/>
       </div>
     );
   }
