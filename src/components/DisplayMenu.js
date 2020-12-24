@@ -44,25 +44,25 @@ export default class DisplayMenu extends Component {
                 </div>
                 <h1 className="text-primary text-center mb-3"> Our Menu Selection</h1>
                 <div className="row">
-                    <h2 className="col-12 text-center">Breakfast</h2>
+                    <h1 className="col-12  handwritten text-center">Breakfast</h1>
                 </div>
                 <div className="row m-3">
                  <Breakfast menu={this.props.menu}/>
                 </div>
                 <div className="row">
-                    <h2 className="col-12 text-center">Lunch</h2>
+                    <h1 className="col-12  handwritten text-center">Lunch</h1>
                 </div>
                 <div className="row m-3">
                  <Lunch menu={this.props.menu}/>
                 </div>
                 <div className="row">
-                    <h2 className="col-12 text-center">Dinner</h2>
+                    <h1 className="col-12  handwritten text-center">Dinner</h1>
                 </div>
                 <div className="row m-3">
                  <Dinner menu={this.props.menu}/>
                 </div>
                 <div className="row">
-                    <h2 className="col-12 text-center">Our Shakes</h2>
+                    <h1 className="col-12 handwritten text-center">Our Shakes</h1>
                 </div>
                 <div className="row m-3">
                  <Shakes menu={this.props.menu}/>

@@ -7,7 +7,7 @@ export default function Breakfast(props) {
     return (
          menu.map((dish) => {
             return(
-        <div key={dish.id} className="col-12 col-md-4">
+        <div key={dish.id} className="col-12 col-md-4 mt-1">
         <Link to={`/menu/${dish.id}`}>
             <Card>
                 <CardImg width="100%" src={dish.img} alt={dish.title} />
